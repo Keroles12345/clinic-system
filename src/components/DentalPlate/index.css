@@ -1,0 +1,44 @@
+.teeth-chart {
+  position: relative;
+  width: 340px;
+  height: 340px;
+  margin: 50px auto;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.quarter {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.tooth {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 42px;
+  height: 42px;
+  margin: -21px;
+  background-color: #4caf50;
+  border-radius: 50%;
+  border: 2px solid white;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  z-index: 2;
+}
+
+.tooth:hover {
+  background-color: #388e3c;
+}
