@@ -68,7 +68,7 @@ const BackButton = () => {
           <FaSearch className="text-gray-500 shrink-0" />
           <input
             type="text"
-            placeholder="ابحث عن اسم المريض..."
+            placeholder="find the patient..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             onFocus={() => setIsFocused(true)}
