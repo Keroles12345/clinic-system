@@ -20,16 +20,19 @@ jobs:
 
       - name: Install dependencies and build React
         run: |
-          cd project1
           npm install
           npm run build
 
       - name: Deploy dist/ to Hostinger
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-        with:  
+        with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: project1/dist/
+          local-dir: dist/
           server-dir: public_html/
-          dangerous-clean-slate: true
+          exclude: |
+            project1/**
+            *.php
+            manifest.json
+            icons/**
