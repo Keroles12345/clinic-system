@@ -16,10 +16,11 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: "18"
+          node-version: "20"   # لأن react-router-dom 7 يحتاج Node >= 20
 
       - name: Install dependencies and build React
         run: |
+          cd project1
           npm install
           npm run build
 
@@ -29,7 +30,7 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: dist/
+          local-dir: project1/dist/
           server-dir: public_html/
           exclude: |
             project1/**
